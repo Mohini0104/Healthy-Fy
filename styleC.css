@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.hide{
+    display: none;
+}
+body{
+    background-color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+*{
+    text-decoration: none !important;
+}
+.container{
+    height: 90vh;
+}
+.nav{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    background-color: #fff;
+    box-shadow: 0px 19px 38px rgba(0,0,0,0.10);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.nav .links a{
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+
+}
+.nav .links a{
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight:600 ;
+    color: #000;
+}
+.nav .links .main_link{
+    color: #e0501b;
+}
+.nav  h4{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+/* ______________________________________LANDING CSS______________________________________ */
+
+.landing{  display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10w 0 10vw;
+    margin-top: 50px;
+    border: 2px solid red;
+}
+.main_landing{
+    display: flex;
+    flex-direction: column;
+
+}
+.landingImage img{
+    height: 25vw;
+}
+.landingText{
+     margin-top: 50px;
+}
+
+.landingText h1{
+    font-size: 6vw;
+    margin: 0 !important;
+    }
+    .landingText h3{
+    font-size: 20px;
+    margin: 6px !important;
+    opacity: 0.3;
+    line-height:30px;
+    
+    }
+    .landingText .btn{
+    width: 120px;
+    margin-top: 30px;
+    font-size: 1.2vw;
+    padding: 14px 20px 14px 20px;
+    background-color: #2f8be0;
+    text-align: center;
+    border-radius: 45px;
+    }
+    .landingText .btn a{
+        font-size: 1vw;
+        color: #fff;
+    }
+
+    /* _______________________________FOOTER___________________________________ */
+    .footer_class{
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .footerlink{
+        font-weight: 700;
+    }
+    #footer_img{
+        /* margin-top: 10px; */
+        height: 20px;
+        width: 20px;
+    }
+/* --------------------CORONA UPDATES------------------ */
+.stats {
+    width: 60vw;
+    height: 80vh;
+    opacity: 0.8;
+    z-index: 1;
+    background: url("images/corona.jpg");
+    /* margin-top: -79vh; */
+}
+
+.latest_report{
+    display: flex;
+    width: 80%;
+    color: white;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 20px;
+}
+.country, .total_cases, .recovered , .deaths{
+    height: 50px;
+}
+.name{
+    
+    color:red;
+    font-size: 2.2rem;
+    font-weight: bolder;
+    opacity: 5;
+}
+.change_country{
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: black;
+}
+.title{
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+.total_cases .value{
+    font-size: 2rem;
+    font-weight: bold; 
+    color: #e0501b;
+}
+.recovered .value{
+    font-size: 2rem;
+    font-weight: bold;
+    color: green;
+}
+.deaths .value{
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+}
+/* -----Chart---- */
+.chart{
+    width: 80%;
+    height: 70vh;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 3px 0;
+}
+.search_country{
+    position: relative;
+    top: 10px;
+}
+.search_box{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
+    height: 30px;
+    background-color: #111;
+}
+.search_box input{
+width: 320px;
+height: 25px;
+background-color: transparent;
+color: white;
+font-size: 1.1rem;
+}
+.search_box img{
+width: 20px;
+padding-right: 5px;
+cursor: pointer;
+}
+/*----------------COUNTRY--------------------*/
+.country_list{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:30px;
+    color: white;
+    width: 360px;
+    height: 280px;
+    background-color: black;
+    opacity: 0.9;
+    overflow-y: scroll;
+}
+/* .country_list ul{
+
+} */
+.country_list ul li{
+    list-style: none;
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+}
+.country_list ul li:hover{
+   border-left: 1px solid white;
+}
+/* ----------SCROLL BAR---------- */
+/* width */
+.country_list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .country_list::-webkit-scrollbar-track {
+    background: black;
+  }
+  
+  /* Handle */
+  .country_list::-webkit-scrollbar-thumb {
+    background: black;
+  }
+  
+  /* Handle on hover */
+  .country_list ::-webkit-scrollbar-thumb:hover {
+    background: BLACK;
+  }
+  
+  
+  /*------------------------------RESPONSIVENESS------------------------- */
+  @media only screen and (max-width:450px){
+      .landing{
+          display: flex;
+          flex-direction:column-reverse ;
+      }
+      .nav{
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        height:auto;
+        overflow-y: hidden;
+
+    }
+    .nav h4{
+        font-size: 6vw;
+        margin-top: 20px;
+        margin-bottom: 14px;
+        margin-left :auto;
+        margin-right: 40px;
+    }
+    .nav .links a{
+         margin-right: 25px;
+         font-size: 12px;
+         font-weight: 600;
+        
+    }
+      .stats {
+        width: 100vw;
+        height: 50vh;
+        opacity: 0.8;
+        z-index: 1;
+        background: url("images/corona.jpg");
+        margin-top: 30px;
+    }
+    .latest_report{
+        display: flex;
+        flex-direction: row;
+        
+        color: white;
+        justify-content: space-around;
+        font-size: 2rem;
+        /* align-items: center; */
+        padding-top: 0px;
+    }
+    
+    .title{
+        font-size: 0.7rem;
+    }
+    .total_cases .value{
+        font-size: 0.8rem;
+        font-weight: bold; 
+        color: #e0501b;
+    }
+    .recovered .value{
+        font-size: 0.8rem;
+        font-weight: bold; 
+        color: green;
+    }
+    .deaths .value{
+        font-size: 0.8rem;
+        font-weight: bold; 
+        color: red;
+    }
+    .name{
+    
+        color:red;
+        font-size:0.8rem;
+        font-weight: bolder;
+        opacity: 5;
+    }
+    .change_country{
+        font-size: 0.6rem;
+        cursor: pointer;
+        border: 2px solid black;
+        background-color: black;
+    }
+    .new_value{
+        font-size: 0.8rem;
+    }
+
+    .country_list{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top:30px;
+        color: white;
+        width: 260px;
+        height: 100px;
+        background-color: black;
+        opacity: 0.9;
+        overflow-y: scroll;
+    }
+    /* .country_list ul{
+    
+    } */
+    .country_list ul li{
+        list-style: none;
+        cursor: pointer;
+        padding: 5px;
+        color: white;
+        font-size: 0.5rem;
+    }
+    .country_list ul li:hover{
+       border-left: 1px solid white;
+    }
+    .search_country{
+        position: relative;
+        top: 10px;
+    }
+    .search_box{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+        width: 70px;
+        height: 5px;
+        background-color: #111;
+        color: black;
+    }
+    .search_box input{
+    width: 120px;
+    height: 15px;
+    background-color: transparent;
+    color: white;
+    font-size: 0.8rem;
+    }
+    .search_box img{
+    width: 10px;
+    padding-right: 5px;
+    cursor: pointer;
+    }
+    /* ___________ */
+    .footer_class{
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .footerlink{
+        font-weight: 700;
+    }
+    #footer_img{
+        /* margin-top: 10px; */
+        height: 10px;
+        width: 10px;
+    }
+    footer h2{
+        font-size: 1rem;
+    }
+    .landing{
+        flex-direction: column-reverse;
+        height: 750px;
+        align-items: center;
+        justify-content: center;
+    }
+    .landingText h1{
+      font-size: 6vw;
+      margin: 0 !important;
+      align-items: center;
+      justify-content: center;
+    }
+    .landingText h3{
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+  
+    }
+    .landingText .btn{
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+  
+    }
+    .landingText .btn a{
+       font-size: 2vw;
+  
+    }
+  }
