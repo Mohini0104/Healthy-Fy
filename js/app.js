@@ -1,4 +1,5 @@
-// Selecting all the elements
+
+// Selecting all the elements----------------------------------
 const country_name_element = document.querySelector(".country .name");
 const total_cases_element = document.querySelector(".total_cases .value");
 const new_cases_element = document.querySelector(".total_cases .new_value");
@@ -7,16 +8,16 @@ const new_recoverd_element = document.querySelector(".recovered .new_value");
 const deaths_element = document.querySelector(".deaths .value");
 const new_deaths_element = document.querySelector(".deaths .new_value");
 
-const ctx = document.getElementById("#axes_linear_chart");
 
-// App variable to store data
+
+// App variable to store data----------------------------------
 let cases_list =[];
 let app_data =[];
 let  recovered_list=[];
 let  death_list=[];
 let  deaths=[];
 
-// Get users country code
+// Get users country code-------------------------------------
 let country_code = geoplugin_countryCode(); 
 let users_country;
 countrylist.forEach(country => {
@@ -25,9 +26,10 @@ countrylist.forEach(country => {
     }
     
 });
-// API KEY
+// API KEY----------------------------------------------------
 
 function fetchData(users_country){
+
     fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php?=${users_country}", {
         "method": "GET",
         "headers": {
@@ -73,36 +75,46 @@ function updateUI(){
     axesLinearCharts();
 }
 function updateStats(){
+    before_last_entry = app_data[app_data.length-1];
     let last_entry =app_data[app_data.length-2];
-    // let before_last_entry =app_data[app_data.length-4];
-    // console.log(before_last_entry);
-    // console.log(last_entry)
     country_name_element.innerHTML = last_entry[1].country_name;
     total_cases_element.innerHTML = last_entry[1].cases ||0;
     new_cases_element.innerHTML=`+ ${last_entry[1].new_cases}`;
     recovered_element.innerHTML =last_entry[1].total_recovered;
-
+    new_recoverd_element.innerHTML = last_entry.recovered_element - before_last_entry.recovered_element;
     deaths_element.innerHTML = last_entry[1].deaths;
     new_deaths_element.innerHTML =`+${last_entry[1].new_deaths}`;
 
 
 }
-// update charts-------------------------------------------
+// update charts-----------------------------------------------
+
+const ctx = document.getElementById("axes_linear_chart").getContext("2d");
+let labels = ['total_cases_element','recovered_cases_element','deaths_element'];
+let colorHex =['#FB3640','#EFCA08','#43AA8B']
 let my_chart;
-    function  axesLinearCharts(){
+function axesLinearCharts(){
     my_chart = new Chart(ctx, {
         type: 'line',
-        data: {
-            datasets: [{
-                label: 'First dataset',
-                data: [0, 20, 40, 50]
+        data:{
+            datasets :[{
+                labels:'Cases',
+                data:total_cases_element
+
             }],
-            labels: ['January', 'February', 'March', 'April']
+
+            labels:dates
         },
-        options: {
-           responsive : true,
-           maintainAspectRatio : false
+        options:{
+            responsive : true,
+            maintainAspectRatio: false
         }
     });
+
+   
 }
+
+
+
+
 
